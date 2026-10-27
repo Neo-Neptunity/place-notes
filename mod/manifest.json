@@ -1,0 +1,28 @@
+{
+  "id": "neo.place-notes",
+  "name": "ここ付箋",
+  "version": "0.1.0",
+  "apiVersion": 1,
+  "entry": "index.js",
+  "uses": ["entries", "icons", "modified", "links", "folderData"],
+  "location": "folder",
+  "description": "付箋を、ファイルやフォルダに貼ります。付箋は貼った場所のフォルダの中に保存されるので、フォルダを動かしても、同期しても、いっしょに付いていきます。はがしても消えず、すべての付箋から戻せます。通信はしません",
+  "menu": [
+    { "id": "stick", "label": "付箋を貼る", "multiple": false, "run": "background" },
+    { "id": "look", "label": "付箋つきで開く", "for": ["folder", "background"] }
+  ],
+  "settings": [
+    { "key": "fontSize", "label": "文字の大きさ", "type": "number", "default": 14, "min": 12, "max": 20, "step": 1 },
+    {
+      "key": "color", "label": "新しい付箋の色", "type": "choice", "default": "yellow",
+      "options": [
+        { "value": "yellow", "label": "きいろ" },
+        { "value": "pink", "label": "もも" },
+        { "value": "blue", "label": "みず" },
+        { "value": "green", "label": "みどり" },
+        { "value": "purple", "label": "むらさき" }
+      ]
+    },
+    { "key": "badge", "label": "タブに付箋の数を出す", "type": "boolean", "default": true }
+  ]
+}
